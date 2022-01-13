@@ -81,6 +81,20 @@ img, svg, iframe {
   margin: 0 auto;
   padding: 0 1em;
 }
+.main a {
+  text-decoration: none;
+}
+.main a,
+.main a:link {
+  font-weight: bold;
+  color: #192f60;
+}
+.main a:visited {
+  color: #551A8B;
+}
+.main a:hover {
+  opacity: .7;
+}
 @media screen and (max-width: 576px) { /* スマホ用 */
   .main__inner {
     width: 90%;
@@ -178,27 +192,30 @@ img, svg, iframe {
 /* footer
 ================================================== */
 .footer {
-  font-family: Verdana, メイリオ, sans-serif;
-  background-color: #192f60;
+  padding-top: 10px;
+  background-image: url(../img/line-blue-bumpy-bottom.png);
 }
 .footer__inner {
-  padding: 10em 1.5em 1em;
+  padding: 100px 1.5em 1em;
   text-align: center;
+  background-image: linear-gradient(#192f60, #09182e);
+}
+.profile {
+  margin-bottom: 100px;
 }
 .backSignboard {
-  display: inline-block;
+  margin-bottom: 15px;
 }
-.backSignboard__link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
+.backSignboard__link:hover {
+  opacity: .7
 }
-.backSignboard__title {
-  color: #fffffc;
+.backSignboard__logo {
+  width: 250px;
+  height: auto;
 }
 .office {
-  padding-left: .5em;
+  font-size: 1.6rem;
+  text-align: center;
   letter-spacing: .1em;
   color: #fffffc;
 }
@@ -206,67 +223,13 @@ img, svg, iframe {
   text-decoration: none;
   color: inherit;
 }
+.office a:hover {
+  opacity: .7
+}
 .copyright {
   color: #fffffc;
 }
 .copyrightHolder {
   text-decoration: none;
   color: inherit;
-}
-@media screen and (max-width: 767px) { /* スマホ用 */
-  .profile {
-    margin-bottom: 12em;
-  }
-  .backSignboard__logo {
-    width: 70px;
-    height: 70px;
-    margin-right: 10px;
-  }
-  .backSignboard__title {
-    font-size: 3rem;
-  }
-  .office {
-    font-size: 1.4rem;
-    margin: 0 auto;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 991px) { /* タブレット用 */
-  .profile {
-    margin-bottom: 12em;
-  }
-  .backSignboard__logo {
-    width: 100px;
-    height: 100px;
-    margin-right: 10px;
-  }
-  .backSignboard__title {
-    font-size: 6rem;
-  }
-  .office {
-    font-size: 1.6rem;
-    text-align: center;
-  }
-}
-@media screen and (min-width: 992px) { /* それ以外用 */
-  .profile {
-    margin-bottom: 12em;
-  }
-  .backSignboard__link:hover {
-    opacity: .8
-  }
-  .backSignboard__logo {
-    width: 100px;
-    height: 100px;
-    margin-right: 10px;
-  }
-  .backSignboard__title {
-    font-size: 6rem;
-  }
-  .office {
-    font-size: 1.6rem;
-    text-align: center;
-  }
-  .office a:hover {
-    opacity: .8
-  }
 }

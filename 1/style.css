@@ -76,6 +76,20 @@ img, svg, iframe {
   margin: 0 auto;
   padding: 0 1em;
 }
+.main a {
+  text-decoration: none;
+}
+.main a,
+.main a:link {
+  font-weight: bold;
+  color: #192f60;
+}
+.main a:visited {
+  color: #551A8B;
+}
+.main a:hover {
+  opacity: .7;
+}
 @media screen and (max-width: 576px) { /* スマホ用 */
   .main__inner {
     width: 90%;
@@ -97,96 +111,48 @@ img, svg, iframe {
 ================================================== */
 .contents {
   font-size: 1.6rem;
-  margin-bottom: 10em;
+  margin-bottom: 100px;
 }
-.heading-2 {
-  font-size: 2rem;
-  margin-bottom: 2em;
-  padding: .5em 1em;
+.content {
+  padding: 300px 1em 500px;
   text-align: center;
-  color: #fffffc;
-  background-color: #302833;
-  border-radius: 4px;
-}
-.heading-2::after {
-  display: block;
-  font-size: 1rem;
-  content: attr(data-subheading);
-  color: #eae5e3;
-}
-.heading-3 {
-  font-size: 1.8rem;
-  margin: 3em 0 1em;
-  padding-left: 1em;
-  letter-spacing: .1em;
-  border-left: 10px solid #302833;
-  border-bottom: 2px solid #302833;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-}
-.heading-4 {
-  font-size: 1.8rem;
-  margin: 2em 0 .5em .1em;
-  letter-spacing: .1em;
-}
-.heading-4::before {
-  content: "\025cf";
-  margin-right: .5em;
-  color: #302833;
-}
-.content p {
-  margin-bottom: 1em;
-  text-indent: 1em;
-}
-.content ul {
-  margin: 0 1em 2em 2em;
-}
-.content li {
-  margin-bottom: .7em;
-}
-.content a {
-  text-decoration: none;
-}
-.postFooter {
-  font-size: 1.6rem;
-}
-.postDescription {
-  margin-bottom: 1em;
-  color: #c9171e;
 }
 .postDescription a {
   text-decoration: none;
   color: inherit;
 }
 .postDescription a:hover {
-  text-decoration: underline;
+  opacity: .7;
 }
 
 
 /* footer
 ================================================== */
 .footer {
-  font-family: Verdana, メイリオ, sans-serif;
-  background-color: #192f60;
+  padding-top: 10px;
+  background-image: url(../img/line-blue-bumpy-bottom.png);
 }
 .footer__inner {
-  padding: 10em 1.5em 1em;
+  padding: 100px 1.5em 1em;
   text-align: center;
+  background-image: linear-gradient(#192f60, #09182e);
+}
+.profile {
+  margin-bottom: 100px;
 }
 .backSignboard {
-  display: inline-block;
+  margin-bottom: 15px;
 }
-.backSignboard__link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
+.backSignboard__link:hover {
+  opacity: .7
 }
-.backSignboard__title {
-  color: #fffffc;
+.backSignboard__logo {
+  width: 250px;
+  height: auto;
 }
 .office {
-  padding-left: .5em;
+  font-size: 1.6rem;
+  text-align: center;
   letter-spacing: .1em;
   color: #fffffc;
 }
@@ -194,67 +160,13 @@ img, svg, iframe {
   text-decoration: none;
   color: inherit;
 }
+.office a:hover {
+  opacity: .7
+}
 .copyright {
   color: #fffffc;
 }
 .copyrightHolder {
   text-decoration: none;
   color: inherit;
-}
-@media screen and (max-width: 767px) { /* スマホ用 */
-  .profile {
-    margin-bottom: 12em;
-  }
-  .backSignboard__logo {
-    width: 70px;
-    height: 70px;
-    margin-right: 10px;
-  }
-  .backSignboard__title {
-    font-size: 3rem;
-  }
-  .office {
-    font-size: 1.4rem;
-    margin: 0 auto;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 991px) { /* タブレット用 */
-  .profile {
-    margin-bottom: 12em;
-  }
-  .backSignboard__logo {
-    width: 100px;
-    height: 100px;
-    margin-right: 10px;
-  }
-  .backSignboard__title {
-    font-size: 6rem;
-  }
-  .office {
-    font-size: 1.6rem;
-    text-align: center;
-  }
-}
-@media screen and (min-width: 992px) { /* それ以外用 */
-  .profile {
-    margin-bottom: 12em;
-  }
-  .backSignboard__link:hover {
-    opacity: .8
-  }
-  .backSignboard__logo {
-    width: 100px;
-    height: 100px;
-    margin-right: 10px;
-  }
-  .backSignboard__title {
-    font-size: 6rem;
-  }
-  .office {
-    font-size: 1.6rem;
-    text-align: center;
-  }
-  .office a:hover {
-    opacity: .8
-  }
 }
