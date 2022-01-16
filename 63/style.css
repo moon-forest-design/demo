@@ -29,7 +29,7 @@ img, svg, iframe {
 .header {
   height: 100vh;
   margin-bottom: 10em;
-  background-color: #4c6cb3;
+  background-color: #007bbb;
 }
 .header__container {
   height: inherit;
