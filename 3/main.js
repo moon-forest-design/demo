@@ -1,6 +1,4 @@
-{ // ブロックスコープ(START)
 "use strict";
-
 
 // jQueryを使うよ
 $(function() {
@@ -19,6 +17,3 @@ $(function() {
   $(window).scroll(); // 中途半端な位置でリロードされたときも、ふんわり表示する
 
 });
-
-
-} // ブロックスコープ(END)

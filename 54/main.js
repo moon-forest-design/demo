@@ -1,6 +1,4 @@
-{ // ブロックスコープ(START)
 "use strict";
-
 
 // jQueryを使うよ
 $(function() {
@@ -13,6 +11,3 @@ $(function() {
   });
 
 });
-
-
-} // ブロックスコープ(END)
