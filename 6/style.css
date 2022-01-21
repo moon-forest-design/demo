@@ -28,16 +28,19 @@ img, svg, iframe {
 ================================================== */
 .header {
   margin-bottom: 10em;
-  color: #fffffc;
-  background-color: #302833;
+  background-color: #192f60;
+  background-image: linear-gradient(#09182e, #192f60);
 }
 .header__container {
-  padding: 3em 1em 0;
+  padding: 3em 1em;
+  background-image: url(../img/line-blue-bumpy-top.png);
+  background-repeat: repeat-x;
+  background-position: bottom;
 }
 .siteTitle {
-  margin-bottom: 1em;
-  text-align: center;
   letter-spacing: .1em;
+  text-align: center;
+  color: #fffffc;
 }
 
 .menu {
@@ -137,7 +140,7 @@ img, svg, iframe {
   padding: .5em 1em;
   text-align: center;
   color: #fffffc;
-  background-color: #302833;
+  background-color: #192f60;
   border-radius: 4px;
 }
 .heading-2::after {
@@ -151,54 +154,21 @@ img, svg, iframe {
   margin: 3em 0 1em;
   padding-left: 1em;
   letter-spacing: .1em;
-  border-left: 10px solid #302833;
-  border-bottom: 2px solid #302833;
+  border-left: 10px solid #192f60;
+  border-bottom: 2px solid #192f60;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
 }
-.heading-4 {
-  font-size: 1.8rem;
-  margin: 2em 0 .5em .1em;
-  letter-spacing: .1em;
-}
-.heading-4::before {
-  content: "\025cf";
-  margin-right: .5em;
-  color: #302833;
-}
-.content p {
-  margin-bottom: 1em;
-  text-indent: 1em;
-}
-.content ul {
-  margin: 0 1em 2em 2em;
-}
-.content a {
-  text-decoration: none;
-}
-.code {
-  padding: 0 1.5em;
-  box-sizing: border-box;
-  margin: 0 auto;
-  border: 1px solid #eae5e3;
-  box-shadow: 0 0 10px -5px rgba(0, 0, 0, .5) inset;
-  border-radius: 4px;
-  white-space: pre-wrap;
-  overflow-wrap: break-word;
-}
-.postFooter {
-  font-size: 1.6rem;
-}
 .postDescription {
-  margin-bottom: 1em;
-  color: #c9171e;
+  padding: 100px 1em 100px;
+  text-align: center;
 }
 .postDescription a {
   text-decoration: none;
   color: inherit;
 }
 .postDescription a:hover {
-  text-decoration: underline;
+  opacity: .7;
 }
 
 
