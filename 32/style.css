@@ -129,15 +129,15 @@ img, svg {
   font-size: 1.6rem;
   margin-bottom: 100px;
 }
-.content {
+.postPageBack {
   padding: 300px 1em 500px;
   text-align: center;
 }
-.postDescription a {
+.postPageBackParagraph a {
   text-decoration: none;
   color: inherit;
 }
-.postDescription a:hover {
+.postPageBackParagraph a:hover {
   opacity: .7;
 }
 

@@ -106,15 +106,11 @@ img, svg, iframe {
 }
 
 
-/* content
+/* contents
 ================================================== */
 .contents {
   font-size: 1.6rem;
   margin-bottom: 100px;
-}
-.content {
-  padding: 300px 1em 500px;
-  text-align: center;
 }
 .heading-2 {
   font-size: 2rem;
@@ -141,11 +137,15 @@ img, svg, iframe {
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
 }
-.postDescription a {
+.postPageBack {
+  padding: 300px 1em 500px;
+  text-align: center;
+}
+.postPageBackParagraph a {
   text-decoration: none;
   color: inherit;
 }
-.postDescription a:hover {
+.postPageBackParagraph a:hover {
   opacity: .7;
 }
 

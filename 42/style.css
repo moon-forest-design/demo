@@ -129,7 +129,7 @@ img, svg, iframe {
 }
 
 
-/* content
+/* contents
 ================================================== */
 .contents {
   font-size: 1.6rem;
@@ -160,15 +160,15 @@ img, svg, iframe {
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
 }
-.postDescription {
+.postPageBackParagraph {
   padding: 100px 1em 100px;
   text-align: center;
 }
-.postDescription a {
+.postPageBackParagraph a {
   text-decoration: none;
   color: inherit;
 }
-.postDescription a:hover {
+.postPageBackParagraph a:hover {
   opacity: .7;
 }
 

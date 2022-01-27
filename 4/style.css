@@ -19,9 +19,6 @@ body {
 img {
   max-width: 100%;
 }
-img, svg, iframe {
-  vertical-align: bottom;
-}
 
 
 /* header
@@ -42,29 +39,6 @@ img, svg, iframe {
   text-align: center;
   color: #fffffc;
 }
-
-.menu {
-  max-width: 990px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  text-align: center;
-  list-style-type: none;
-}
-.menu__item {
-  width: calc(100% / 3);
-}
-.menu__link {
-  font-size: 1.6rem;
-  padding: 1em;
-  display: block;
-  text-decoration: none;
-  color: #fffffc;
-}
-.menu__link:hover {
-  opacity: .7;
-}
-
 @media screen and (max-width: 576px) { /* スマホ用 */
   .siteTitle {
     font-size: 2rem;
@@ -74,16 +48,10 @@ img, svg, iframe {
   .siteTitle {
     font-size: 2.2rem;
   }
-  .brNone {
-    display: none;
-  }
 }
 @media screen and (min-width: 992px) { /* それ以外用 */
   .siteTitle {
     font-size: 3.3rem;
-  }
-  .brNone {
-    display: none;
   }
 }
 
@@ -123,7 +91,7 @@ img, svg, iframe {
 }
 @media screen and (min-width: 992px) { /* それ以外用 */
   .main__inner {
-    max-width: 990px;
+    width: 990px;
   }
 }
 
@@ -132,7 +100,7 @@ img, svg, iframe {
 ================================================== */
 .contents {
   font-size: 1.6rem;
-  margin-bottom: 10em;
+  margin-bottom: 100px;
 }
 .heading-2 {
   font-size: 2rem;
@@ -143,24 +111,8 @@ img, svg, iframe {
   background-color: #192f60;
   border-radius: 4px;
 }
-.heading-2::after {
-  display: block;
-  font-size: 1rem;
-  content: attr(data-subheading);
-  color: #eae5e3;
-}
-.heading-3 {
-  font-size: 1.8rem;
-  margin: 3em 0 1em;
-  padding-left: 1em;
-  letter-spacing: .1em;
-  border-left: 10px solid #192f60;
-  border-bottom: 2px solid #192f60;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-}
-.postPageBackParagraph {
-  padding: 100px 1em 100px;
+.postPageBack {
+  padding: 300px 1em 500px;
   text-align: center;
 }
 .postPageBackParagraph a {
@@ -169,6 +121,31 @@ img, svg, iframe {
 }
 .postPageBackParagraph a:hover {
   opacity: .7;
+}
+
+
+/* sample
+================================================== */
+.sample {
+  margin-bottom: 4em;
+  text-align: center;
+  background-color: #302833;
+  border-radius: 4px;
+}
+.sample__caseA {
+  width: 60%;
+  border-radius: 4px;
+}
+.sample__caseB {
+  width: 60%;
+  border-radius: 4px;
+  vertical-align: bottom;
+}
+.svg {
+  background-color: #e198b4;
+}
+.svg text {
+  fill: #fffffc;
 }
 
 
