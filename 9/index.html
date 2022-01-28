@@ -4,53 +4,52 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous"> 
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="../favicon.ico">
-  <link rel="canonical" href="https://moon-forest-design.github.io/demo/38/">
-  <title>デモページ：カルーセルスライダー「Slick」</title>
+  <link rel="canonical" href="https://moon-forest-design.github.io/demo/9/">
+  <title>デモページ：Font Awesomeを疑似要素として使う方法</title>
   <meta name="format-detection" content="telephone=no">
-  <meta name="description" content="カルーセルスライダー「Slick」のデモページです。">
+  <meta name="description" content="Webアイコンフォント「Font Awesome」を、疑似要素で使う方法です。CSSの疑似要素::beforeを使って表示します。">
   <meta name="author" content="イールド（月の森デザイン）">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:site_name" content="ツキノラボ">
-  <meta property="og:title" content="デモページ：カルーセルスライダー「Slick」">
-  <meta property="og:description" content="カルーセルスライダー「Slick」のデモページです。">
+  <meta property="og:title" content="デモページ：Font Awesomeを疑似要素として使う方法">
+  <meta property="og:description" content="Webアイコンフォント「Font Awesome」を、疑似要素で使う方法です。CSSの疑似要素::beforeを使って表示します。">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://moon-forest-design.github.io/demo/38/">
+  <meta property="og:url" content="https://moon-forest-design.github.io/demo/9/">
   <meta name="robots" content="noindex">
 </head>
 <body>
+
   <header class="header">
     <div class="header__container">
-      <h1 class="siteTitle">Slickのデモ</h1>
+      <h1 class="siteTitle">Font Awesomeを疑似要素として使うデモ</h1>
     </div>
   </header>
-
-  <ul class="slider">
-    <li class="slider__item"><img class="slider__img" src="slider1.jpg"></li>
-    <li class="slider__item"><img class="slider__img" src="slider2.jpg"></li>
-    <li class="slider__item"><img class="slider__img" src="slider3.jpg"></li>
-    <li class="slider__item"><img class="slider__img" src="slider4.jpg"></li>
-  </ul>
 
   <main class="main">
     <div class="main__inner">
 
-      <div class="contents">
+      <section class="contents">
+
+        <h2 class="heading-2">Font Awesomeの Webアイコンフォント「受話器」を使用した例</h2>
+        <div class="fontawesome">
+          <div class="phone">090-000-000</div>
+        </div>
+
         <div class="postPageBack">
           <p class="postPageBackParagraph">
-            記事『<a href="https://moon-forest-design.github.io/memo/carousel-slider-slick/">
-              カルーセルスライダー「Slick」の導入と使い方
+            記事『<a href="https://moon-forest-design.github.io/memo/web-font-awesome-v5-pseudo-element/">
+              Font Awesomeを疑似要素として使う方法
             </a>』のデモページです。
           </p>
         </div>
         <!-- /.postPageBack -->
-
+  
         <div class="postFooter">
           <div class="postDate">
-            作成日: <time class="releaseDate" datetime="2021-6-9">2021年6月9日</time>
+            作成日: <time class="releaseDate" datetime="2021-5-5">2021年5月5日</time>
           </div>
           <div class="postAuthor">
             作成者: イールド
@@ -58,7 +57,7 @@
         </div>
         <!-- /.postFooter -->
 
-      </div>
+      </section>
       <!-- /.contents -->
 
     </div>
@@ -88,10 +87,6 @@
     <p>このWebサイトを、より良い形でご利用になるためには、JavaScriptの設定をON（有効）にする必要があります。</p>
     <p>お手間さまですが、ご検討くださいますよう、よろしくお願い申しあげます。</p>
   </noscript>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <script src="main.js"></script>
 
 </body>
 </html>
