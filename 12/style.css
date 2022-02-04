@@ -16,9 +16,6 @@ body {
   color: #302833;
   background-color: #fffffc;
 }
-img {
-  max-width: 100%;
-}
 img, svg, iframe {
   vertical-align: bottom;
 }
@@ -82,11 +79,6 @@ img, svg, iframe {
 .main a:hover {
   opacity: .7;
 }
-@media screen and (max-width: 576px) { /* スマホ用 */
-  .main__inner {
-    width: 90%;
-  }
-}
 @media screen and (min-width: 577px) and (max-width: 991px) { /* タブレット用 */
   .main__inner {
     width: 85%;
@@ -136,26 +128,25 @@ img, svg, iframe {
 /* demo
 ================================================== */
 .parent {
-  height: 10em;
+  height: 250px;
   margin: 0 auto 4em;
-  padding: 1em;
+  text-align: center;
+  overflow: hidden;
   box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, .7);
   border-radius: 4px;
 }
 .parent.pc1280 {
   width: 540px;
 }
-.parent.pc1920 {
-  width: 900px;
+.parent.mobaile360 {
+  width: 150px;
 }
-.child {
-  font-size: .8rem;
-  width: 90%;
-  margin: 0 auto;
-  text-indent: 1em;
+.childImg {
+  width: 250px;
+  height: auto;
 }
-.child.maxWidth {
-  max-width: 540px;
+.childImg.maxWidth {
+  max-width: 100%;
 }
 
 
