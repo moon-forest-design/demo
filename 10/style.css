@@ -114,6 +114,12 @@ img, svg, iframe {
   background-color: #192f60;
   border-radius: 4px;
 }
+.texts {
+  margin-bottom: 3em;
+}
+.texts p {
+  margin-bottom: 1em;
+}
 .postPageBack {
   padding: 300px 1em 500px;
   text-align: center;
