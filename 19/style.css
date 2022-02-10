@@ -1,0 +1,220 @@
+@charset "utf-8";
+
+/* base
+================================================== */
+body, h1, h2, p, ul, li, figure {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1.0rem;
+  line-height: 1.7;
+  color: #302833;
+  background-color: #fffffc;
+}
+img {
+  max-width: 100%;
+}
+img, svg, iframe {
+  vertical-align: bottom;
+}
+
+
+/* header
+================================================== */
+.header {
+  margin-bottom: 10em;
+  background-color: #192f60;
+  background-image: linear-gradient(#09182e, #192f60);
+}
+.header__container {
+  padding: 3em 1em;
+  background-image: url(../img/line-blue-bumpy-top.png);
+  background-repeat: repeat-x;
+  background-position: bottom;
+}
+.siteTitle {
+  letter-spacing: .1em;
+  text-align: center;
+  color: #fffffc;
+}
+@media screen and (max-width: 576px) { /* スマホ用 */
+  .siteTitle {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 577px) and (max-width: 991px) { /* タブレット用 */
+  .siteTitle {
+    font-size: 2.2rem;
+  }
+}
+@media screen and (min-width: 992px) { /* それ以外用 */
+  .siteTitle {
+    font-size: 3.3rem;
+  }
+}
+
+
+/* main
+================================================== */
+.main {
+  margin-bottom: 15em;
+}
+.main__inner {
+  margin: 0 auto;
+  padding: 0 1em;
+}
+.main a {
+  text-decoration: none;
+}
+.main a,
+.main a:link {
+  font-weight: bold;
+  color: #192f60;
+}
+.main a:visited {
+  color: #551A8B;
+}
+.main a:hover {
+  opacity: .7;
+}
+@media screen and (max-width: 576px) { /* スマホ用 */
+  .main__inner {
+    width: 90%;
+  }
+}
+@media screen and (min-width: 577px) and (max-width: 991px) { /* タブレット用 */
+  .main__inner {
+    width: 85%;
+  }
+}
+@media screen and (min-width: 992px) { /* それ以外用 */
+  .main__inner {
+    width: 990px;
+  }
+}
+
+
+/* contents
+================================================== */
+.contents {
+  font-size: 1.6rem;
+  margin-bottom: 100px;
+}
+.heading-2 {
+  font-size: 2rem;
+  margin-bottom: 2em;
+  padding: .5em 1em;
+  text-align: center;
+  color: #fffffc;
+  background-color: #192f60;
+  border-radius: 4px;
+}
+.postPageBack {
+  padding: 300px 1em 500px;
+  text-align: center;
+}
+.postPageBackParagraph a {
+  text-decoration: none;
+  color: inherit;
+}
+.postPageBackParagraph a:hover {
+  opacity: .7;
+}
+
+
+/* mediaBox
+================================================== */
+.mediaBox {
+  padding: 6em 0;
+}
+.media {
+  display: flex;
+  margin-bottom: 2em;
+}
+.mediaThumbnail {
+  flex: 0 1 30%;
+}
+.mediaThumbnail__img {
+  width: 100%;
+  vertical-align: top;
+  border-radius: 2px;
+}
+.mediaContent {
+  flex: 1;
+  padding: 0 2em;
+}
+.mediaTitle {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: .5em;
+}
+.mediaTitle__link {
+  text-decoration: none;
+  color: inherit;
+}
+@media screen and (max-width: 767px) { /* スマホ用 */
+  .media {
+    flex-direction: column;
+  }
+  .mediaThumbnail__img {
+    margin-bottom: 1em;
+  }
+  .mediaContent {
+    padding: 0;
+  }
+  .mediaTitle {
+    text-align: center;
+  }
+}
+
+
+/* footer
+================================================== */
+.footer {
+  padding-top: 10px;
+  background-image: url(../img/line-blue-bumpy-bottom.png);
+}
+.footer__inner {
+  padding: 100px 1.5em 1em;
+  text-align: center;
+  background-image: linear-gradient(#192f60, #09182e);
+}
+.profile {
+  margin-bottom: 100px;
+}
+.backSignboard {
+  margin-bottom: 15px;
+}
+.backSignboard__link:hover {
+  opacity: .7
+}
+.backSignboard__logo {
+  width: 250px;
+  height: auto;
+}
+.office {
+  font-size: 1.6rem;
+  text-align: center;
+  letter-spacing: .1em;
+  color: #fffffc;
+}
+.office a {
+  text-decoration: none;
+  color: inherit;
+}
+.office a:hover {
+  opacity: .7
+}
+.copyright {
+  color: #fffffc;
+}
+.copyrightHolder {
+  text-decoration: none;
+  color: inherit;
+}
