@@ -84,20 +84,6 @@ img, svg, iframe {
   margin: 0 auto;
   padding: 0 1em;
 }
-.main a {
-  text-decoration: none;
-}
-.main a,
-.main a:link {
-  font-weight: bold;
-  color: #192f60;
-}
-.main a:visited {
-  color: #551A8B;
-}
-.main a:hover {
-  opacity: .7;
-}
 @media screen and (max-width: 576px) { /* スマホ用 */
   .main__inner {
     width: 90%;
@@ -127,7 +113,14 @@ img, svg, iframe {
 }
 .postPageBackParagraph a {
   text-decoration: none;
-  color: inherit;
+}
+.postPageBackParagraph a,
+.postPageBackParagraph a:link {
+  font-weight: bold;
+  color: #192f60;
+}
+.postPageBackParagraph a:visited {
+  color: #551A8B;
 }
 .postPageBackParagraph a:hover {
   opacity: .7;
