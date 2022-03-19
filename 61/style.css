@@ -1,0 +1,232 @@
+@charset "utf-8";
+
+/* base
+================================================== */
+body, h1, h2, p, ul, li, ol, dl, dt, dd, figure {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1.0rem;
+  line-height: 1.7;
+  color: #302833;
+  background-color: #fffffc;
+}
+img {
+  max-width: 100%;
+}
+img, svg, iframe {
+  vertical-align: bottom;
+}
+
+
+/* header
+================================================== */
+.header {
+  height: 100px;
+  margin-bottom: 10em;
+  position: relative;
+}
+.signBoard {
+  width: 100%;
+  height: inherit;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fffffc;
+  background-color: #192f60;
+}
+.siteTitle {
+  text-align: center;
+  letter-spacing: .1em;
+}
+@media screen and (max-width: 576px) { /* スマホ用 */
+  .siteTitle {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (min-width: 577px) and (max-width: 991px) { /* タブレット用 */
+  .siteTitle {
+    font-size: 2.2rem;
+  }
+  .brNone {
+    display: none;
+  }
+}
+@media screen and (min-width: 992px) { /* それ以外用 */
+  .siteTitle {
+    font-size: 3.3rem;
+  }
+  .brNone {
+    display: none;
+  }
+}
+
+
+/* drawer.js
+================================================== */
+/* メニュー全体 */
+.drawer-nav {
+  padding-top: 1rem; /* 初期値：なし */
+  background-color: #192f60; /* 初期値：#fff */
+}
+ /* メニュー大項目 */
+.drawer-brand {
+  font-size: 1.6rem; /* 初期値：1.5rem */
+  padding-left: 1rem; /* 初期値：.75rem */
+  color: #fff; /* 初期値：#222 */
+}
+/* メニュー小項目 */
+.drawer-menu-item {
+  font-size: 1.5rem; /* 初期値：1rem */
+  padding: .75rem .75rem .35rem 2.75rem; /* 初期値：.75rem */
+  color: #fff; /* 初期値：#222 */
+}
+/* ハンバーガーボタン全体 */
+.drawer-hamburger {
+  width: 3rem; /* 線幅　初期値：2rem */
+  padding-top: 35px; /* 位置調整　初期値：18px */
+  padding-right: 1.8rem; /* 位置調整　初期値：.75rem */
+}
+/* ハンバーガーボタンの三本線 */
+.drawer-hamburger-icon,
+.drawer-hamburger-icon:after,
+.drawer-hamburger-icon:before {
+  background-color: #fff; /* 線色　初期値：#222 */
+}
+/* オーバーレイ */
+.drawer-overlay {
+  background-color: rgba(0, 0, 0, .7); /* 初期値：0, 0, 0, .2 */
+}
+
+
+/* main
+================================================== */
+.main {
+  margin-bottom: 15em;
+}
+.main__inner {
+  margin: 0 auto;
+  padding: 0 1em;
+}
+@media screen and (max-width: 576px) { /* スマホ用 */
+  .main__inner {
+    width: 90%;
+  }
+}
+@media screen and (min-width: 577px) and (max-width: 991px) { /* タブレット用 */
+  .main__inner {
+    width: 85%;
+  }
+}
+@media screen and (min-width: 992px) { /* それ以外用 */
+  .main__inner {
+    width: 990px;
+  }
+}
+
+
+/* contents
+================================================== */
+.contents {
+  font-size: 1.6rem;
+  margin-bottom: 10em;
+}
+.heading-2 {
+  font-size: 2rem;
+  margin-bottom: 2em;
+  padding: .5em 1em;
+  text-align: center;
+  color: #fffffc;
+  background-color: #192f60;
+  border-radius: 4px;
+}
+.heading-2::after {
+  display: block;
+  font-size: 1rem;
+  content: attr(data-subheading);
+  color: #eae5e3;
+}
+.heading-3 {
+  font-size: 1.8rem;
+  margin: 3em 0 1em;
+  padding-left: 1em;
+  letter-spacing: .1em;
+  border-left: 10px solid #192f60;
+  border-bottom: 2px solid #192f60;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.postPageBackParagraph {
+  padding: 100px 1em 100px;
+  text-align: center;
+}
+.postPageBackParagraph a {
+  text-decoration: none;
+}
+.postPageBackParagraph a,
+.postPageBackParagraph a:link {
+  font-weight: bold;
+  color: #192f60;
+}
+.postPageBackParagraph a:visited {
+  color: #551A8B;
+}
+.postPageBackParagraph a:hover {
+  opacity: .7;
+}
+
+
+/* footer
+================================================== */
+.footer {
+  padding-top: 10px;
+  background-image: url(../img/line-blue-bumpy-bottom.png);
+}
+.footer__inner {
+  padding: 100px 1.5em 1em;
+  text-align: center;
+  background-image: linear-gradient(#192f60, #09182e);
+}
+.profile {
+  margin-bottom: 100px;
+}
+.backSignboard {
+  margin-bottom: 15px;
+}
+.backSignboard__link:hover {
+  opacity: .7
+}
+.backSignboard__logo {
+  width: 250px;
+  height: auto;
+}
+.office {
+  font-size: 1.6rem;
+  text-align: center;
+  letter-spacing: .1em;
+  color: #fffffc;
+}
+.office a {
+  text-decoration: none;
+  color: inherit;
+}
+.office a:hover {
+  opacity: .7
+}
+.copyright {
+  color: #fffffc;
+}
+.copyrightHolder {
+  text-decoration: none;
+  color: inherit;
+}

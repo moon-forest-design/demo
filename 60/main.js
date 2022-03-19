@@ -2,12 +2,12 @@
 
 // jQueryを使うよ
 $(function() {
-  // ドロワーメニュー：バーガーボタン、あるいは暗幕をクリックしたら実行
-  $('.burgerBox, .mask').on('click', function() {
+  // ドロワーメニュー
+  $('.burgerBox, .mask').on('click', function() { // バーガーボタン、あるいは暗幕をクリックしたら実行
     $('.burgerBtn, .navList, .mask').toggleClass('open'); // 各classセレクタに、.openを ON / OFFする
   });
 
-  // スムーズスクロール
+  // スムーズスクロール＆ドロワーメニュー
   $('a[href^="#"]').on('click', function() { // a要素（href属性の値に#が付いているもの）をクリックしたら実行
     const headerHeight = 100; // headerの高さ
     const $href = $(this).attr("href"); // a要素のhref属性の中身を取得
