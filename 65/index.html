@@ -6,17 +6,17 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="../favicon.ico">
-  <link rel="canonical" href="https://moon-forest-design.github.io/demo/64/">
-  <title>デモページ：Reactで「Hello World!」を表示する方法 1</title>
+  <link rel="canonical" href="https://moon-forest-design.github.io/demo/65/">
+  <title>デモページ：Reactのコードを JSX外部ファイルに書き出す方法</title>
   <meta name="format-detection" content="telephone=no">
-  <meta name="description" content="Reactはじめました。まずはお約束の Hello World!を表示するデモページです。">
+  <meta name="description" content="Reactのコードを HTMLファイル内から外部の JSXファイルに書き出して「Hello React!」を表示するデモページです。">
   <meta name="author" content="イールド（月の森デザイン）">
   <meta property="og:locale" content="ja_JP">
-  <meta property="og:site_name" content="ツキノラボ">
-  <meta property="og:title" content="デモページ：Reactで「Hello World!」を表示する方法 1">
-  <meta property="og:description" content="Reactはじめました。まずはお約束の Hello World!を表示するデモページです。">
+  <meta property="og:site_name" content="キアカラボ">
+  <meta property="og:title" content="デモページ：Reactのコードを JSX外部ファイルに書き出す方法">
+  <meta property="og:description" content="Reactのコードを HTMLファイル内から外部の JSXファイルに書き出して「Hello React!」を表示するデモページです。">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://moon-forest-design.github.io/demo/64/">
+  <meta property="og:url" content="https://moon-forest-design.github.io/demo/65/">
   <meta name="robots" content="noindex">
   <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
@@ -25,7 +25,7 @@
 <body>
   <header class="header">
     <div class="header__inner">
-      <h1 class="siteTitle">Reactで「Hello World!」<br class="brNone">を表示するデモ</h1>
+      <h1 class="siteTitle">Reactのコードを<br class="brNone"> JSX外部ファイルに書き出すデモ</h1>
     </div>
   </header>
 
@@ -33,20 +33,13 @@
     <div class="main__inner">
       <section class="contents">
 
-        <!-- Reactコード　ここから -->
+        <!-- Reactを書き出すための div要素 #root -->
         <div id="root" class="demoRoot"></div>
-        <script type="text/babel">
-          ReactDOM.render(
-            <p>Hello World!</p>,
-            document.getElementById('root')
-          );
-        </script>
-        <!-- Reactコード　ここまで -->
 
         <div class="postPageBack">
           <p class="postPageBackParagraph">
-            記事『<a href="https://moon-forest-design.github.io/memo/reactjs-hello-world/">
-              Reactで「Hello World!」を表示する方法
+            記事『<a href="https://moon-forest-design.github.io/memo/reactjs-hello-world-jsx/">
+              Reactのコードを JSX外部ファイルに書き出す方法
             </a>』のデモページです。
           </p>
         </div>
@@ -86,6 +79,13 @@
       </div>
     </div>
   </footer>
+  <noscript>
+    <p>お使いのWebブラウザは、JavaScriptの設定がOFF（無効）になっているようです。</p>
+    <p>このWebサイトを、より良い形でご利用になるためには、JavaScriptの設定をON（有効）にする必要があります。</p>
+    <p>お手間さまですが、ご検討くださいますよう、よろしくお願い申しあげます。</p>
+  </noscript>
+
+  <script type="text/babel" src="index.jsx"></script>
 
 </body>
 </html>
