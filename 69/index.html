@@ -6,26 +6,26 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="../favicon.ico">
-  <link rel="canonical" href="https://moon-forest-design.github.io/demo/64/">
-  <title>デモページ：Reactで「Hello World!」を表示する方法</title>
+  <link rel="canonical" href="https://moon-forest-design.github.io/demo/69/">
+  <title>デモページ：Reactの関数コンポーネントで Propsを試す</title>
   <meta name="format-detection" content="telephone=no">
-  <meta name="description" content="Reactはじめました。まずはお約束の Hello World!を表示するデモページです。">
+  <meta name="description" content="Reactの関数コンポーネントで Propsを試すデモページです。「Props」とは何かと言えば、引数のことです。">
   <meta name="author" content="イールド（月の森デザイン）">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:site_name" content="ツキノラボ">
-  <meta property="og:title" content="デモページ：Reactで「Hello World!」を表示する方法 1">
-  <meta property="og:description" content="Reactはじめました。まずはお約束の Hello World!を表示するデモページです。">
+  <meta property="og:title" content="デモページ：Reactの関数コンポーネントで Propsを試す">
+  <meta property="og:description" content="Reactの関数コンポーネントで Propsを試すデモページです。「Props」とは何かと言えば、引数のことです。">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://moon-forest-design.github.io/demo/64/">
+  <meta property="og:url" content="https://moon-forest-design.github.io/demo/69/">
   <meta name="robots" content="noindex">
   <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
   <header class="header">
     <div class="header__inner">
-      <h1 class="siteTitle">Reactで「Hello World!」<br class="brNone">を表示するデモ</h1>
+      <h1 class="siteTitle">Reactの関数コンポーネントで<br class="brNone"> Propsを試すデモ</h1>
     </div>
   </header>
 
@@ -36,8 +36,11 @@
         <!-- Reactコード　ここから -->
         <div id="root" class="demoRoot"></div>
         <script type="text/babel">
+          function App(props) {
+            return <p>{props.prefix} Hello World!</p>;
+          }
           ReactDOM.render(
-            <p>Hello World!</p>,
+            <App prefix="引数 Propsを使って" />,
             document.getElementById('root')
           );
         </script>
@@ -45,8 +48,8 @@
 
         <div class="postPageBack">
           <p class="postPageBackParagraph">
-            記事『<a href="https://moon-forest-design.github.io/memo/reactjs-hello-world/">
-              Reactで「Hello World!」を表示する方法
+            記事『<a href="https://moon-forest-design.github.io/memo/reactjs-function-component/">
+              Reactの関数コンポーネントで Propsを試す
             </a>』のデモページです。
           </p>
         </div>
@@ -54,7 +57,7 @@
 
         <div class="postFooter">
           <div class="postDate">
-            作成日: <time class="releaseDate" datetime="2021-7-22">2021年7月22日</time>
+            作成日: <time class="releaseDate" datetime="2021-7-23">2021年7月22日</time>
           </div>
           <div class="postAuthor">
             作成者: イールド
