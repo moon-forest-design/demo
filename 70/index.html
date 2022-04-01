@@ -6,38 +6,41 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="../favicon.ico">
-  <link rel="canonical" href="https://moon-forest-design.github.io/demo/69/">
-  <title>デモページ：Reactの関数コンポーネントで Propsを試す</title>
+  <link rel="canonical" href="https://moon-forest-design.github.io/demo/70/">
+  <title>デモページ：Reactのクラスコンポーネントを試す</title>
   <meta name="format-detection" content="telephone=no">
-  <meta name="description" content="Reactの関数コンポーネントで Propsを試すデモページです。">
+  <meta name="description" content="Reactのクラスコンポーネント（Class Component）を試すデモページです。">
   <meta name="author" content="イールド（月の森デザイン）">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:site_name" content="ツキノラボ">
-  <meta property="og:title" content="デモページ：Reactの関数コンポーネントで Propsを試す">
-  <meta property="og:description" content="Reactの関数コンポーネントで Propsを試すデモページです。">
+  <meta property="og:title" content="デモページ：Reactのクラスコンポーネントを試す">
+  <meta property="og:description" content="Reactのクラスコンポーネント（Class Component）を試すデモページです。">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://moon-forest-design.github.io/demo/69/">
+  <meta property="og:url" content="https://moon-forest-design.github.io/demo/70/">
   <meta name="robots" content="noindex">
 </head>
 <body>
   <header class="header">
     <div class="header__inner">
-      <h1 class="siteTitle">Reactの関数コンポーネントで<br class="brNone"> Propsを試すデモ</h1>
+      <h1 class="siteTitle">Reactのクラスコンポーネント<br class="brNone">を試すデモ</h1>
     </div>
   </header>
 
   <main class="main">
     <div class="main__inner">
+
       <section class="contents">
 
         <!-- Reactコード　ここから -->
         <div id="root" class="demoRoot"></div>
         <script type="text/babel">
-          function App(props) {
-            return <p>{props.prefix} Hello World!</p>;
+          class App extends React.Component {
+            render() {
+              return <p>クラスコンポーネントで Hello World!</p>;
+            }
           }
           ReactDOM.render(
-            <App prefix="Propsを使って" />,
+            <App />,
             document.getElementById('root')
           );
         </script>
@@ -45,8 +48,8 @@
 
         <div class="postPageBack">
           <p class="postPageBackParagraph">
-            記事『<a href="https://moon-forest-design.github.io/memo/reactjs-function-component/">
-              Reactの関数コンポーネントで Propsを試す
+            記事『<a href="https://moon-forest-design.github.io/memo/reactjs-class-component/">
+              Reactのクラスコンポーネントを試す
             </a>』のデモページです。
           </p>
         </div>
@@ -54,7 +57,7 @@
 
         <div class="postFooter">
           <div class="postDate">
-            作成日: <time class="releaseDate" datetime="2021-7-23">2021年7月22日</time>
+            作成日: <time class="releaseDate" datetime="2021-7-22">2021年7月22日</time>
           </div>
           <div class="postAuthor">
             作成者: イールド
@@ -94,7 +97,7 @@
 
   <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
 </body>
 </html>
