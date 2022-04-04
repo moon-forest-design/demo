@@ -6,23 +6,23 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="../favicon.ico">
-  <link rel="canonical" href="https://moon-forest-design.github.io/demo/69/">
-  <title>デモページ：Reactの関数コンポーネントで Propsを試す</title>
+  <link rel="canonical" href="https://moon-forest-design.github.io/demo/73/">
+  <title>デモページ：Reactのフラグメント（React.Fragment）を試す</title>
   <meta name="format-detection" content="telephone=no">
-  <meta name="description" content="Reactの関数コンポーネントで Propsを試すデモページです。">
+  <meta name="description" content="Reactのフラグメント（React.Fragment）のデモページです。複数の要素を返したいけれど、div要素を使うのは不適切な場合に役立ちます。">
   <meta name="author" content="イールド（月の森デザイン）">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:site_name" content="ツキノラボ">
-  <meta property="og:title" content="デモページ：Reactの関数コンポーネントで Propsを試す">
-  <meta property="og:description" content="Reactの関数コンポーネントで Propsを試すデモページです。">
+  <meta property="og:title" content="デモページ：Reactのフラグメント（React.Fragment）を試す">
+  <meta property="og:description" content="Reactのフラグメント（React.Fragment）のデモページです。複数の要素を返したいけれど、div要素を使うのは不適切な場合に役立ちます。">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://moon-forest-design.github.io/demo/69/">
+  <meta property="og:url" content="https://moon-forest-design.github.io/demo/73/">
   <meta name="robots" content="noindex">
 </head>
 <body>
   <header class="header">
     <div class="header__inner">
-      <h1 class="siteTitle">Reactの関数コンポーネントで<br class="brNone"> Propsを試すデモ</h1>
+      <h1 class="siteTitle">Reactのフラグメント<br class="brNone">（React.Fragment）を試すデモ</h1>
     </div>
   </header>
 
@@ -33,11 +33,29 @@
         <!-- Reactコード　ここから -->
         <div id="root" class="demoRoot"></div>
         <script type="text/babel">
-          function App(props) {
-            return <p>{props.prefix} Hello World!</p>;
+          function DataDemo() {
+            return (
+              <React.Fragment>
+                <td>データA</td>
+                <td>データB</td>
+                <td>データC</td>
+              </React.Fragment>
+            );
+          }
+          function TableDemo() {
+            return (
+              <table>
+                <tr>
+                  <th>見出しA</th>
+                  <th>見出しB</th>
+                  <th>見出しC</th>
+                </tr>
+                <tr><DataDemo /></tr>
+              </table>
+            );
           }
           ReactDOM.render(
-            <App prefix="Propsを使って" />,
+            <TableDemo />,
             document.getElementById('root')
           );
         </script>
@@ -45,8 +63,8 @@
 
         <div class="postPageBack">
           <p class="postPageBackParagraph">
-            記事『<a href="https://moon-forest-design.github.io/memo/reactjs-function-component/">
-              Reactの関数コンポーネントで Propsを試す
+            記事『<a href="https://moon-forest-design.github.io/memo/reactjs-fragment/">
+              Reactのフラグメント（React.Fragment）を試す
             </a>』のデモページです。
           </p>
         </div>
