@@ -30,7 +30,8 @@
     <div class="main__inner">
       <section class="contents">
 
-        <!-- Reactコード　ここから -->
+        <h2 class="heading-2">Stateを使ったカウントアップボタン</h2>
+        <!-- Reactコード1　ここから -->
         <div id="root" class="demoRoot"></div>
         <script type="text/babel">
           class CountUpBtn extends React.Component {
@@ -55,7 +56,70 @@
             document.getElementById('root')
           );
         </script>
-        <!-- Reactコード　ここまで -->
+        <!-- Reactコード1　ここまで -->
+
+        <h2 class="heading-2">Stateを使った Toggleボタン</h2>
+        <!-- Reactコード2　ここから -->
+        <div id="root2" class="demoRoot"></div>
+        <script type="text/babel">
+          class ToggleBtn extends React.Component {
+            constructor(props) {
+              super(props);
+              this.state = {isToggleOn: true};
+              this.handleClick = this.handleClick.bind(this);
+            }
+
+            handleClick() {
+              this.setState(prevState => ({
+                isToggleOn: !prevState.isToggleOn
+              }));
+            }
+
+            render() {
+              return (
+                <button onClick={this.handleClick}>
+                  {this.state.isToggleOn ? 'ON' : 'OFF'}
+                </button>
+              );
+            }
+          }
+
+          ReactDOM.render(
+            <ToggleBtn />,
+            document.getElementById('root2')
+          );
+        </script>
+        <!-- Reactコード2　ここまで -->
+
+        <h2 class="heading-2">Stateを使った いいねボタン</h2>
+        <!-- Reactコード3　ここから -->
+        <div id="root3" class="demoRoot"></div>
+        <script type="text/babel">
+          class LikeBtn extends React.Component {
+            constructor(props) {
+              super(props);
+              this.state = { liked: false };
+            }
+
+            render() {
+              if (this.state.liked) {
+                return 'You liked this !';
+              }
+
+              return (
+                <button onClick={() => this.setState({ liked: true })}>
+                  Like
+                </button>
+              );
+            }
+          }
+
+          ReactDOM.render(
+            <LikeBtn />,
+            document.getElementById('root3')
+          );
+        </script>
+        <!-- Reactコード3　ここまで -->
 
         <div class="postPageBack">
           <p class="postPageBackParagraph">
