@@ -29,8 +29,8 @@
   <main class="main">
     <div class="main__inner">
       <section class="contents">
-        <h2 class="heading-2">時刻表示</h2>
 
+        <h2 class="heading-2">時刻表示</h2>
         <!-- Reactコード1　ここから -->
         <div id="root" class="demoRoot"></div>
         <script type="text/babel">
@@ -45,18 +45,18 @@
                 date: new Date()
               });
             }
-            // レンダー直後に実行したい処理
+            // 最初のレンダー直後に実行したい処理
             componentDidMount() {
               this.timerID = setInterval(
                 () => this.tick(),
                 1000
               );
             }
-            // componentDidMount()の解除処理
+            // setInterval()の解除処理
             componentWillUnmount() {
               clearInterval(this.timerID);
             }
-            // this.stateを利用して現在の時刻を表示
+            // this.state（状態）が変化した場合に、render()を実行して現在の時刻を表示（描画）する
             render() {
               return <p>時刻　{this.state.date.toLocaleTimeString()}</p>;
             }
@@ -68,7 +68,48 @@
         </script>
         <!-- Reactコード1　ここまで -->
 
-        <!-- <h2 class="heading-2">カウントアップタイマー</h2> -->
+        <h2 class="heading-2">カウントアップタイマー</h2>
+        <!-- Reactコード2　ここから -->
+        <div id="root2" class="demoRoot"></div>
+        <script type="text/babel">
+          class CountUpTimer extends React.Component {
+            constructor(props) {
+              super(props);
+              this.state = { seconds: 0 };
+            }
+            // カウントアップ
+            tick() {
+              this.setState(state => ({
+                seconds: state.seconds + 1
+              }));
+            }
+            // 最初のレンダー直後に実行したい処理
+            componentDidMount() {
+              this.interval = setInterval(
+                () => this.tick(),
+                 1000
+              );
+            }
+            // setInterval()の解除処理
+            componentWillUnmount() {
+              clearInterval(this.interval);
+            }
+            // this.state（状態）が変化した場合に、render()を実行してカウントアップした値を表示（描画）する
+            render() {
+              return (
+                <div>
+                  {this.state.seconds}
+                </div>
+              );
+            }
+          }
+          ReactDOM.render(
+            <CountUpTimer />,
+            document.getElementById('root2')
+          );
+        </script>
+        <!-- Reactコード2　ここまで -->
+
 
         <div class="postPageBack">
           <p class="postPageBackParagraph">
