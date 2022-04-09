@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="../favicon.ico">
+  <link rel="canonical" href="https://moon-forest-design.github.io/demo/77/">
+  <title>デモページ：Reactのライフサイクルという概念</title>
+  <meta name="format-detection" content="telephone=no">
+  <meta name="description" content="Reactの「ライフサイクル」という概念のまとめ。最低限覚えておきたいライフサイクルメソッド 2つを、時刻表示とカウントアップタイマーのコードを通して理解するためのデモページ。">
+  <meta name="author" content="イールド（月の森デザイン）">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="ツキノラボ">
+  <meta property="og:title" content="デモページ：Reactのライフサイクルという概念">
+  <meta property="og:description" content="Reactの「ライフサイクル」という概念のまとめ。最低限覚えておきたいライフサイクルメソッド 2つを、時刻表示とカウントアップタイマーのコードを通して理解するためのデモページ。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://moon-forest-design.github.io/demo/77/">
+  <meta name="robots" content="noindex">
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <h1 class="siteTitle">Reactの<br class="brNone">ライフサイクルのデモ</h1>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="main__inner">
+      <section class="contents">
+        <h2 class="heading-2">時刻表示</h2>
+
+        <!-- Reactコード1　ここから -->
+        <div id="root" class="demoRoot"></div>
+        <script type="text/babel">
+          class Clock extends React.Component {
+            constructor(props) {
+              super(props);
+              this.state = {date: new Date()};
+            }
+            // 現在の日時を取得
+            tick() {
+              this.setState({
+                date: new Date()
+              });
+            }
+            // レンダー直後に実行したい処理
+            componentDidMount() {
+              this.timerID = setInterval(
+                () => this.tick(),
+                1000
+              );
+            }
+            // componentDidMount()の解除処理
+            componentWillUnmount() {
+              clearInterval(this.timerID);
+            }
+            // this.stateを利用して現在の時刻を表示
+            render() {
+              return <p>時刻　{this.state.date.toLocaleTimeString()}</p>;
+            }
+          }
+          ReactDOM.render(
+            <Clock />,
+            document.getElementById('root')
+          );
+        </script>
+        <!-- Reactコード1　ここまで -->
+
+        <!-- <h2 class="heading-2">カウントアップタイマー</h2> -->
+
+        <div class="postPageBack">
+          <p class="postPageBackParagraph">
+            記事『<a href="https://moon-forest-design.github.io/memo/reactjs-class-component-lifecycle-method/">
+              Reactのライフサイクルという概念
+            </a>』のデモページです。
+          </p>
+        </div>
+        <!-- /.postPageBack -->
+
+        <div class="postFooter">
+          <div class="postDate">
+            作成日: <time class="releaseDate" datetime="2021-7-24">2021年7月24日</time>
+          </div>
+          <div class="postAuthor">
+            作成者: イールド
+          </div>
+        </div>
+        <!-- /.postFooter -->
+
+      </section>
+      <!-- /.contents -->
+
+    </div>
+    <!-- /.main__inner -->
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="profile">
+        <div class="backSignboard">
+          <a class="backSignboard__link" href="https://moon-forest-design.github.io/">
+            <img class="backSignboard__logo" src="../img/logoTitle.png" alt="ツキノラボのロゴ" width="318" height="52">
+          </a>
+        </div>
+        <p class="office">
+          <a href="https://moon-forest-design.com/" title="ホームページ制作の「月の森デザイン」" target="_blank" rel="noopener noreferrer">月の森デザイン</a> の Web研究室
+        </p>
+      </div>
+      <div class="copyright">
+        <p><small>Copyright &copy; 2021 <a class="copyrightHolder" href="https://moon-forest-design.com/" title="ホームページ制作の「月の森デザイン」" target="_blank" rel="noopener noreferrer">月の森デザイン</a> All Rights Reserved.</small></p>
+      </div>
+    </div>
+  </footer>
+  <noscript>
+    <p>お使いのWebブラウザは、JavaScriptの設定がOFF（無効）になっているようです。</p>
+    <p>このWebサイトを、より良い形でご利用になるためには、JavaScriptの設定をON（有効）にする必要があります。</p>
+    <p>お手間さまですが、ご検討くださいますよう、よろしくお願い申しあげます。</p>
+  </noscript>
+
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+</body>
+</html>
