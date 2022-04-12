@@ -107,22 +107,7 @@ button {
   flex-direction: column;
   text-align: center;
 }
-.demoRoot button {
-  padding: 1em 1.5em;
-  color: #fffffc;
-  background-color: #69821b;
-  box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, .5);
-  border-radius: 4px;
-  transition: .3s;
-}
-.demoRoot button:hover {
-  opacity: .9;
-}
-.demoRoot button:active {
-  transform: translate(2px, 3px);
-  box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, .2),
-              2px 2px 3px 0 rgba(0, 0, 0, .3) inset;
-}
+
 
 
 /* contents
