@@ -29,30 +29,34 @@
   <main class="main">
     <div class="main__inner">
       <section class="contents">
-        <h2 class="heading-2">Array.map()を使ってメンバーリストを表示</h2>
+        <h2 class="heading-2">Array.map()を使ってメンバーリストを表示（key付）</h2>
 
         <!-- Reactコード　ここから -->
         <div id="root" class="demoRoot"></div>
         <script type="text/babel">
+          const MemberItem = ({ name, hiragana }) => {
+            return <li>{name}（{hiragana}）</li>;
+          };
+          const MemberList = (props) => {
+            const members = props.members;
+            const memberItems = members.map((member) => (
+              <MemberItem name={member.name} hiragana={member.hiragana} />
+            ));
+            return (
+              <ul>
+                {memberItems}
+              </ul>
+            );
+          };
           const members = [
-            { name: '桃花 兎', hiragana: 'ももはな うさぎ' },
-            { name: '利休白茶 猫', hiragana: 'りきゅうしろちゃ ねこ' },
-            { name: '黄赤 狐', hiragana: 'きあか きつね' },
-            { name: '胡桃 狸', hiragana: 'くるみ たぬき' },
-            { name: '松葉 蛙', hiragana: 'まつば かえる' },
+            { id: 1, name: '桃花 兎', hiragana: 'ももはな うさぎ' },
+            { id: 2, name: '利休白茶 猫', hiragana: 'りきゅうしろちゃ ねこ' },
+            { id: 3, name: '黄赤 狐', hiragana: 'きあか きつね' },
+            { id: 4, name: '胡桃 狸', hiragana: 'くるみ たぬき' },
+            { id: 5, name: '松葉 蛙', hiragana: 'まつば かえる' },
           ];
-          const MemberItem = ({ name, hiragana }) => (
-            <li>{name}（{hiragana}）</li>
-          );
-          const MemberList = () => (
-            <ul>
-              {members.map((member) => (
-                <MemberItem name={member.name} hiragana={member.hiragana} />
-              ))}
-            </ul>
-          );
           ReactDOM.render(
-            <MemberList />,
+            <MemberList members={members} />,
             document.getElementById('root')
           );
         </script>
@@ -60,8 +64,8 @@
 
         <div class="postPageBack">
           <p class="postPageBackParagraph">
-            記事『<a href="https://moon-forest-design.github.io/memo/reactjs-array-map/">
-              Reactでよく使う Array.map()を試す
+            記事『<a href="https://moon-forest-design.github.io/memo/reactjs-array-map-and-key/">
+              Reactでよく使う Array.map()と keyを試す
             </a>』のデモページです。
           </p>
         </div>
