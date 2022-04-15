@@ -102,9 +102,31 @@ button {
 /* demoRoot
 ================================================== */
 .demoRoot {
+  margin-bottom: 100px;
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+.demoRoot header h1 {
+  font-size: 3rem;
+  margin-bottom: 1em;
+  text-align: center;
+}
+.recipes {
+  padding-bottom: 2em;
+}
+.recipes h1 {
+  font-size: 2rem;
+  margin-bottom: 1em;
+  border-bottom: 1px solid #bbb;
+}
+.recipes h2 {
+  font-size: 1.7rem;
+}
+.recipes ul,
+.recipes ol {
+  margin-left: 2em;
+  margin-bottom: 1em;
 }
 
 
