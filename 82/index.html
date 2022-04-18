@@ -51,6 +51,51 @@
         </script>
         <!-- Reactコード　ここまで -->
 
+        <h2 class="heading-2">useState()を使った toggleボタン</h2>
+        <!-- Reactコード　ここから -->
+        <div id="root2" class="demoRoot"></div>
+        <script type="text/babel">
+          const ToggleBtn = () => {
+            // const [状態変数, 状態変更関数] = React.useState(状態の初期値);
+            const [isToggleOn, setToggle] = React.useState(true);
+            const handleClick = () => setToggle(!isToggleOn);
+            return (
+              <button onClick={handleClick}>
+                {isToggleOn ? 'ON' : 'OFF'}
+              </button>
+            );
+          };
+          ReactDOM.render(
+            <ToggleBtn />,
+            document.getElementById('root2')
+          );
+        </script>
+        <!-- Reactコード　ここまで -->
+
+        <h2 class="heading-2">useState()を使った いいねボタン</h2>
+        <!-- Reactコード　ここから -->
+        <div id="root3" class="demoRoot"></div>
+        <script type="text/babel">
+          const LikeButton = () => {
+            const [liked, setLiked] = React.useState(false);
+            if (liked) {
+              return 'You liked this !';
+            }
+            const handleClick = () => setLiked(!liked);
+            return (
+              <button onClick={handleClick}>
+                Like
+              </button>
+            );
+          };
+          ReactDOM.render(
+            <LikeButton />,
+            document.getElementById('root3')
+          );
+        </script>
+        <!-- Reactコード　ここまで -->
+
+
         <div class="postPageBack">
           <p class="postPageBackParagraph">
             記事『<a href="https://moon-forest-design.github.io/memo/reactjs-function-component-hooks-use-state/">
