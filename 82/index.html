@@ -30,7 +30,7 @@
     <div class="main__inner">
       <section class="contents">
 
-        <h2 class="heading-2">useState()を使ったカウントアップボタン</h2>
+        <h2 class="heading-2">useState()を使った カウントアップボタン</h2>
         <!-- Reactコード　ここから -->
         <div id="root" class="demoRoot"></div>
         <script type="text/babel">
@@ -91,6 +91,88 @@
           ReactDOM.render(
             <LikeButton />,
             document.getElementById('root3')
+          );
+        </script>
+        <!-- Reactコード　ここまで -->
+
+        <h2 class="heading-2">useState()を使った ログイン・ログアウトボタン</h2>
+        <!-- Reactコード　ここから -->
+        <div id="root4" class="demoRoot"></div>
+        <script type="text/babel">
+          const LogoutButton = (props) => {
+            return (
+              <button onClick={props.onClick}>
+                Logout
+              </button>
+            );
+          };
+          const LoginButton = (props) => {
+            return (
+              <button onClick={props.onClick}>
+                Login
+              </button>
+            );
+          };
+          const UserGreeting = (props) => <p>Welcome back!</p>;
+          const GuestGreeting = (props) => <p>Please sign up.</p>;
+          const Greeting = ({ isLoggedIn }) => {
+            if (isLoggedIn) {
+              return <UserGreeting />;
+            }
+            return <GuestGreeting />;
+          }
+          const LoginControl = () => {
+            const [isLoggedIn, setLogging] = React.useState(false);
+            const handleLoginClick = () => setLogging(true);
+            const handleLogoutClick = () => setLogging(false);
+            let button;
+            if (isLoggedIn) {
+              button = <LogoutButton onClick={handleLogoutClick} />;
+            } else {
+              button = <LoginButton onClick={handleLoginClick} />;
+            }
+            return (
+              <div>
+                <Greeting isLoggedIn={isLoggedIn} />
+                {button}
+              </div>
+            );
+          };
+          ReactDOM.render(
+            <LoginControl />,
+            document.getElementById('root4')
+          );
+        </script>
+        <!-- Reactコード　ここまで -->
+
+        <h2 class="heading-2">useState()を使った 名前入力フォーム</h2>
+        <!-- Reactコード　ここから -->
+        <div id="root5" class="demoRoot"></div>
+        <script type="text/babel">
+          const NameForm = () => {
+            const [value, setvalue] = React.useState("");
+            const handleChange = (event) => {
+              setvalue(event.target.value);
+            };
+            const handleSubmit = (event) => {
+              console.log('名前が入力されました: ' + value);
+              event.preventDefault();
+            }
+            return (
+              <form onSubmit={handleSubmit}>
+                <label htmlFor="name">
+                  name :
+                  <input id="name" type="text" value={value} onChange={handleChange} />
+                </label>
+                <button type="submit">
+                  Submit
+                </button>
+              </form>
+            );
+          };
+          ReactDOM.render(
+            <NameForm />,
+            document.getElementById('root5')
           );
         </script>
         <!-- Reactコード　ここまで -->
