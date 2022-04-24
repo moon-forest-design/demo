@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="../favicon.ico">
+  <link rel="canonical" href="https://moon-forest-design.github.io/demo/85/">
+  <title>デモページ：Reactで jsonplaceholderの Web APIを試す</title>
+  <meta name="format-detection" content="telephone=no">
+  <meta name="description" content="CodePenで紹介されている Web APIのコードを試します。jsonplaceholder APIでデータを取得。例外処理catch()あり。">
+  <meta name="author" content="イールド（月の森デザイン）">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="ツキノラボ">
+  <meta property="og:title" content="デモページ：Reactで jsonplaceholderの Web APIを試す">
+  <meta property="og:description" content="CodePenで紹介されている Web APIのコードを試します。jsonplaceholder APIでデータを取得。例外処理catch()あり。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://moon-forest-design.github.io/demo/85/">
+  <meta name="robots" content="noindex">
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <h1 class="siteTitle">Reactで jsonplaceholderの<br class="brNone"> Web APIを試す</h1>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="main__inner">
+
+      <section class="contents">
+
+        <!-- Reactコード　ここから -->
+        <div id="root" class="demoRoot"></div>
+        <script type="text/babel">
+          const Photos = ({ photo }) => {
+            return (
+              <figure>
+                <img src={photo.thumbnailUrl} alt={photo.title} />
+                <figcaption>{photo.title}</figcaption>
+              </figure>
+            );
+          };
+          class App extends React.Component {
+            state = {
+              photos: [],
+              isLoading: true,
+              errors: null
+            };
+            fetchPhotos() {
+              fetch(`https://jsonplaceholder.typicode.com/photos?id=1`)
+                .then(response => response.json())
+                .then(data =>
+                  this.setState({
+                    photos: data,
+                    isLoading: false
+                  })
+                )
+                .catch(error =>
+                  this.setState({
+                    error,
+                    isLoading: false
+                  })
+                );
+            }
+            componentDidMount() {
+              this.fetchPhotos();
+            }
+            render() {
+              const { isLoading, photos } = this.state;
+              return (
+                <>
+                  {!isLoading ? (
+                    photos.map(photo => {
+                      return <Photos key={photo.id} photo={photo} />;
+                    })
+                  ) : (
+                    <p>Loading...</p>
+                  )}
+                </>
+              );
+            }
+          }
+          ReactDOM.render(
+            <App />,
+            document.getElementById("root")
+          );
+        </script>
+        <!-- Reactコード　ここまで -->
+
+
+        <div class="postPageBack">
+          <p class="postPageBackParagraph">
+            記事『<a href="https://moon-forest-design.github.io/memo/reactjs-web-api-fetch-jsonplaceholder/">
+              Reactで jsonplaceholderの Web APIを試す
+            </a>』のデモページです。
+          </p>
+        </div>
+        <!-- /.postPageBack -->
+
+        <div class="postFooter">
+          <div class="postDate">
+            作成日: <time class="releaseDate" datetime="2021-7-29">2021年7月29日</time>
+          </div>
+          <div class="postAuthor">
+            作成者: イールド
+          </div>
+        </div>
+        <!-- /.postFooter -->
+
+      </section>
+      <!-- /.contents -->
+
+    </div>
+    <!-- /.main__inner -->
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="profile">
+        <div class="backSignboard">
+          <a class="backSignboard__link" href="https://moon-forest-design.github.io/">
+            <img class="backSignboard__logo" src="../img/logoTitle.png" alt="ツキノラボのロゴ" width="318" height="52">
+          </a>
+        </div>
+        <p class="office">
+          <a href="https://moon-forest-design.com/" title="ホームページ制作の「月の森デザイン」" target="_blank" rel="noopener noreferrer">月の森デザイン</a> の Web研究室
+        </p>
+      </div>
+      <div class="copyright">
+        <p><small>Copyright &copy; 2021 <a class="copyrightHolder" href="https://moon-forest-design.com/" title="ホームページ制作の「月の森デザイン」" target="_blank" rel="noopener noreferrer">月の森デザイン</a> All Rights Reserved.</small></p>
+      </div>
+    </div>
+  </footer>
+  <noscript>
+    <p>お使いのWebブラウザは、JavaScriptの設定がOFF（無効）になっているようです。</p>
+    <p>このWebサイトを、より良い形でご利用になるためには、JavaScriptの設定をON（有効）にする必要があります。</p>
+    <p>お手間さまですが、ご検討くださいますよう、よろしくお願い申しあげます。</p>
+  </noscript>
+
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+</body>
+</html>
