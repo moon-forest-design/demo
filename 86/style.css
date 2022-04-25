@@ -1,0 +1,215 @@
+@charset "utf-8";
+
+/* base
+================================================== */
+body, h1, h2, p, ul, ol, li {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.0rem;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  line-height: 1.7;
+  color: #302833;
+  background-color: #fffffc;
+}
+img {
+  max-width: 100%;
+}
+img, svg, iframe {
+  vertical-align: bottom;
+}
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+}
+
+
+/* header
+================================================== */
+.header {
+  margin-bottom: 10em;
+  background-color: #192f60;
+  background-image: linear-gradient(#09182e, #192f60);
+}
+.header__inner {
+  padding: 3em 1em;
+  background-image: url(../img/line-blue-bumpy-top.png);
+  background-repeat: repeat-x;
+  background-position: bottom;
+}
+.siteTitle {
+  letter-spacing: .1em;
+  text-align: center;
+  color: #fffffc;
+}
+@media screen and (max-width: 576px) { /* スマホ用 */
+  .siteTitle {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (min-width: 577px) and (max-width: 991px) { /* タブレット用 */
+  .siteTitle {
+    font-size: 2.6rem;
+  }
+  .brNone {
+    display: none;
+  }
+}
+@media screen and (min-width: 992px) { /* それ以外用 */
+  .siteTitle {
+    font-size: 3rem;
+  }
+  .brNone {
+    display: none;
+  }
+}
+
+
+/* main
+================================================== */
+.main {
+  margin-bottom: 15em;
+}
+.main__inner {
+  margin: 0 auto;
+  padding: 0 1em;
+}
+@media screen and (max-width: 576px) { /* スマホ用 */
+  .main__inner {
+    width: 90%;
+  }
+}
+@media screen and (min-width: 577px) and (max-width: 991px) { /* タブレット用 */
+  .main__inner {
+    width: 85%;
+  }
+}
+@media screen and (min-width: 992px) { /* それ以外用 */
+  .main__inner {
+    width: 990px;
+  }
+}
+
+
+/* demoRoot
+================================================== */
+.demoRoot {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.demoRoot form {
+  margin-bottom: 30px;
+}
+.demoRoot label {
+  margin-right: 8px;
+}
+.demoRoot input {
+  margin-right: 8px;
+  padding: .8em;
+}
+.demoRoot button {
+  padding: 1em 1.5em;
+  color: #fffffc;
+  background-color: #69821b;
+  box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, .5);
+  border-radius: 4px;
+  transition: .3s;
+}
+.demoRoot button:hover {
+  opacity: .9;
+}
+.demoRoot button:active {
+  transform: translate(2px, 3px);
+  box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, .2),
+              2px 2px 3px 0 rgba(0, 0, 0, .3) inset;
+}
+
+
+/* contents
+================================================== */
+.contents {
+  font-size: 1.6rem;
+  margin-bottom: 100px;
+}
+.heading-2 {
+  font-size: 2rem;
+  margin-bottom: 2em;
+  padding: .5em 1em;
+  text-align: center;
+  color: #fffffc;
+  background-color: #192f60;
+  border-radius: 4px;
+}
+.postPageBack {
+  padding: 300px 1em 500px;
+  text-align: center;
+}
+.postPageBackParagraph a {
+  text-decoration: none;
+}
+.postPageBackParagraph a,
+.postPageBackParagraph a:link {
+  font-weight: bold;
+  color: #192f60;
+}
+.postPageBackParagraph a:visited {
+  color: #551A8B;
+}
+.postPageBackParagraph a:hover {
+  opacity: .7;
+}
+
+
+/* footer
+================================================== */
+.footer {
+  padding-top: 10px;
+  background-image: url(../img/line-blue-bumpy-bottom.png);
+}
+.footer__inner {
+  padding: 100px 1.5em 1em;
+  text-align: center;
+  background-image: linear-gradient(#192f60, #09182e);
+}
+.profile {
+  margin-bottom: 100px;
+}
+.backSignboard {
+  margin-bottom: 15px;
+}
+.backSignboard__link:hover {
+  opacity: .7
+}
+.backSignboard__logo {
+  width: 250px;
+  height: auto;
+}
+.office {
+  font-size: 1.6rem;
+  text-align: center;
+  letter-spacing: .1em;
+  color: #fffffc;
+}
+.office a {
+  text-decoration: none;
+  color: inherit;
+}
+.office a:hover {
+  opacity: .7
+}
+.copyright {
+  color: #fffffc;
+}
+.copyrightHolder {
+  text-decoration: none;
+  color: inherit;
+}

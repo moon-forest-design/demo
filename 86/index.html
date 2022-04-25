@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="../favicon.ico">
+  <link rel="canonical" href="https://moon-forest-design.github.io/demo/86/">
+  <title>デモページ：Reactの ToDoリストのアプリを試す</title>
+  <meta name="format-detection" content="telephone=no">
+  <meta name="description" content="React公式のトップページで紹介されている Todoリストのコードを試すデモページです。">
+  <meta name="author" content="イールド（月の森デザイン）">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="ツキノラボ">
+  <meta property="og:title" content="デモページ：Reactの ToDoリストのアプリを試す">
+  <meta property="og:description" content="React公式のトップページで紹介されている Todoリストのコードを試すデモページです。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://moon-forest-design.github.io/demo/86/">
+  <meta name="robots" content="noindex">
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <h1 class="siteTitle">Reactの ToDoリスト<br class="brNone">のアプリを試すデモ</h1>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="main__inner">
+      <section class="contents">
+
+        <h2 class="heading-2">React公式のトップページで紹介されている ToDoリスト アプリ</h2>
+        <!-- Reactコード　ここから -->
+        <div id="root" class="demoRoot"></div>
+        <script type="text/babel">
+          class TodoApp extends React.Component {
+            constructor(props) {
+              super(props);
+              this.state = {
+                items: [], // items：入力された内容をストックする配列
+                text: '' // text：入力欄に表示する文字列tmp
+              };
+              // bind()しておく
+              this.handleChange = this.handleChange.bind(this);
+              this.handleSubmit = this.handleSubmit.bind(this);
+            }
+            // 状態が変化した場合に render()を再度実行して描画する
+            render() {
+              return (
+                <>
+                  <form onSubmit={this.handleSubmit}>
+                    <label htmlFor="new-todo">
+                      やること入力
+                    </label>
+                    <input
+                      id="new-todo"
+                      onChange={this.handleChange}
+                      value={this.state.text}
+                    />
+                    <button>
+                      Add #{this.state.items.length + 1}
+                    </button>
+                  </form>
+                  <TodoList items={this.state.items} />
+                </>
+              );
+            }
+            // 入力欄に入力されたときの処理
+            handleChange(e) {
+              this.setState({ text: e.target.value });
+            }
+            // submitボタンが押されたときの処理
+            handleSubmit(e) {
+              e.preventDefault();
+              // 何も入力されていなければ、何もせず return
+              if (this.state.text.length === 0) {
+                return;
+              }
+              const newItem = {
+                text: this.state.text, // 入力された内容を格納
+                id: Date.now() // idとしてUNIX時間を設定 keyとして利用 
+              };
+              // TodoリストitemsとnewItemを結合し、入力欄を空にする
+              this.setState(state => ({
+                items: state.items.concat(newItem),
+                text: ''
+              }));
+            }
+          }
+          // Todoリストの表示
+          class TodoList extends React.Component {
+            render() {
+              // key属性は各項目を識別するために使う
+              return (
+                <ul>
+                  {this.props.items.map(item => (
+                    <li key={item.id}>{item.text}</li>
+                  ))}
+                </ul>
+              );
+            }
+          }
+          ReactDOM.render(
+            <TodoApp />,
+            document.getElementById('root')
+          );
+        </script>
+        <!-- Reactコード　ここまで -->
+
+
+        <div class="postPageBack">
+          <p class="postPageBackParagraph">
+            記事『<a href="https://moon-forest-design.github.io/memo/reactjs-app-todo-list/">
+              Reactの ToDoリストのアプリを試す
+            </a>』のデモページです。
+          </p>
+        </div>
+        <!-- /.postPageBack -->
+
+        <div class="postFooter">
+          <div class="postDate">
+            作成日: <time class="releaseDate" datetime="2021-7-30">2021年7月30日</time>
+          </div>
+          <div class="postAuthor">
+            作成者: イールド
+          </div>
+        </div>
+        <!-- /.postFooter -->
+
+      </section>
+      <!-- /.contents -->
+
+    </div>
+    <!-- /.main__inner -->
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="profile">
+        <div class="backSignboard">
+          <a class="backSignboard__link" href="https://moon-forest-design.github.io/">
+            <img class="backSignboard__logo" src="../img/logoTitle.png" alt="ツキノラボのロゴ" width="318" height="52">
+          </a>
+        </div>
+        <p class="office">
+          <a href="https://moon-forest-design.com/" title="ホームページ制作の「月の森デザイン」" target="_blank" rel="noopener noreferrer">月の森デザイン</a> の Web研究室
+        </p>
+      </div>
+      <div class="copyright">
+        <p><small>Copyright &copy; 2021 <a class="copyrightHolder" href="https://moon-forest-design.com/" title="ホームページ制作の「月の森デザイン」" target="_blank" rel="noopener noreferrer">月の森デザイン</a> All Rights Reserved.</small></p>
+      </div>
+    </div>
+  </footer>
+  <noscript>
+    <p>お使いのWebブラウザは、JavaScriptの設定がOFF（無効）になっているようです。</p>
+    <p>このWebサイトを、より良い形でご利用になるためには、JavaScriptの設定をON（有効）にする必要があります。</p>
+    <p>お手間さまですが、ご検討くださいますよう、よろしくお願い申しあげます。</p>
+  </noscript>
+
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+</body>
+</html>
