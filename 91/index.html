@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="../favicon.ico">
+  <link rel="canonical" href="https://moon-forest-design.github.io/demo/91/">
+  <title>デモページ：アンケートフォーム用 input要素の書き方</title>
+  <meta name="format-detection" content="telephone=no">
+  <meta name="description" content="アンケートフォームに使用するときの input要素のデモページです。type属性で radioや checkboxを指定します。">
+  <meta name="author" content="イールド（月の森デザイン）">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="ツキノラボ">
+  <meta property="og:title" content="デモページ：アンケートフォーム用 input要素の書き方">
+  <meta property="og:description" content="アンケートフォームに使用するときの input要素のデモページです。type属性で radioや checkboxを指定します。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://moon-forest-design.github.io/demo/91/">
+  <meta name="robots" content="noindex">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__container">
+      <h1 class="siteTitle">アンケートフォーム用<br class="brNone"> input要素のデモ</h1>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="main__inner">
+      <section class="contents">
+
+          <div class="questionnaire">
+            <h2 class="questionnaire__title">アンケートフォーム</h2>
+            <form class="form" action="" method="post">
+              <dl class="formList">
+                <dt class="formList__term">
+                  <label for="name">お名前</label>
+                </dt>
+                <dd class="formList__description">
+                  <input type="text" id="name" name="your-name">
+                </dd>
+                <dt class="formList__term">
+                  性別
+                </dt>
+                <dd class="formList__description">
+                  <label for="man">
+                    <input id="man" type="radio" name="gender" value="man"> 男性
+                  </label>
+                  <label for="woman">
+                    <input id="woman" type="radio" name="gender" value="woman"> 女性
+                  </label>
+                  <label for="not-answered">
+                    <input id="not-answered" type="radio" name="gender" value="not-answered" checked> 回答しない
+                  </label>
+                </dd>
+                <dt class="formList__term">
+                  好きな色は？（複数可）
+                </dt>
+                <dd class="formList__description">
+                  <label for="like-red">
+                    <input id="like-red" type="checkbox" name="like-color" value="like-red" checked> 赤
+                  </label>
+                  <label for="like-blue">
+                    <input id="like-blue" type="checkbox" name="like-color" value="like-blue"> 青
+                  </label>
+                  <label for="like-green">
+                    <input id="like-green" type="checkbox" name="like-color" value="like-green"> 緑
+                  </label>
+                </dd>
+                <dt class="formList__term">
+                  <label for="message">ご要望</label>
+                </dt>
+                <dd class="formList__description">
+                  <textarea id="message" name="your-message" required></textarea>
+                </dd>
+              </dl>
+              <div class="submit">
+                <button class="submit__btn" type="submit">送信</button>
+              </div>
+            </form>
+          </div>
+
+
+          <div class="postPageBack">
+            <p class="postPageBackParagraph">
+              記事『<a href="https://moon-forest-design.github.io/memo/form-element-input-type-radio-checkbox/">
+                アンケートフォーム用 input要素の書き方
+              </a>』のデモページです。
+            </p>
+          </div>
+          <!-- /.postPageBack -->
+  
+          <div class="postFooter">
+            <div class="postDate">
+              作成日: <time class="releaseDate" datetime="2021-5-30">2021年5月30日</time>
+            </div>
+            <div class="postAuthor">
+              作成者: イールド
+            </div>
+          </div>
+          <!-- /.postFooter -->
+
+      </section>
+      <!-- /.contents -->
+
+    </div>
+    <!-- /.main__inner -->
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="profile">
+        <div class="backSignboard">
+          <a class="backSignboard__link" href="https://moon-forest-design.github.io/">
+            <img class="backSignboard__logo" src="../img/logoTitle.png" alt="ツキノラボのロゴ" width="318" height="52">
+          </a>
+        </div>
+        <p class="office">
+          <a href="https://moon-forest-design.com/" title="ホームページ制作の「月の森デザイン」" target="_blank" rel="noopener noreferrer">月の森デザイン</a> の Web研究室
+        </p>
+      </div>
+      <div class="copyright">
+        <p><small>Copyright &copy; 2021 <a class="copyrightHolder" href="https://moon-forest-design.com/" title="ホームページ制作の「月の森デザイン」" target="_blank" rel="noopener noreferrer">月の森デザイン</a> All Rights Reserved.</small></p>
+      </div>
+    </div>
+  </footer>
+
+  <noscript>
+    <p>お使いのWebブラウザは、JavaScriptの設定がOFF（無効）になっているようです。</p>
+    <p>このWebサイトを、より良い形でご利用になるためには、JavaScriptの設定をON（有効）にする必要があります。</p>
+    <p>お手間さまですが、ご検討くださいますよう、よろしくお願い申しあげます。</p>
+  </noscript>
+
+</body>
+</html>
