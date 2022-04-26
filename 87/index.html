@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="../favicon.ico">
+  <link rel="canonical" href="https://moon-forest-design.github.io/demo/87/">
+  <title>デモページ：Reactの stateのリフトアップを学ぶ</title>
+  <meta name="format-detection" content="telephone=no">
+  <meta name="description" content="React公式の「state のリフトアップ」で紹介されている 水の沸騰温度を計算するアプリのコードを試すデモページです。">
+  <meta name="author" content="イールド（月の森デザイン）">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="ツキノラボ">
+  <meta property="og:title" content="デモページ：Reactの stateのリフトアップを学ぶ">
+  <meta property="og:description" content="React公式の「state のリフトアップ」で紹介されている 水の沸騰温度を計算するアプリのコードを試すデモページです。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://moon-forest-design.github.io/demo/87/">
+  <meta name="robots" content="noindex">
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <h1 class="siteTitle">Reactの stateの<br class="brNone">リフトアップのデモ</h1>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="main__inner">
+      <section class="contents">
+
+        <h2 class="heading-2">React公式で紹介されている 水の沸騰温度を計算するアプリ</h2>
+        <!-- Reactコード　ここから -->
+        <div id="root" class="demoRoot"></div>
+        <script type="text/babel">
+          // 摂氏・華氏を判別するための略称　c or f
+          const scaleNames = {
+            c: '摂氏（Celsius）',
+            f: '華氏（Fahrenheit）'
+          };
+          // 摂氏（Celsius）へ変換する計算式
+          function toCelsius(fahrenheit) {
+            return (fahrenheit - 32) * 5 / 9;
+          }
+          // 華氏（Fahrenheit）へ変換する計算式
+          function toFahrenheit(celsius) {
+            return (celsius * 9 / 5) + 32;
+          }
+          // 摂氏・華氏の変換
+          function tryConvert(temperature, convert) {
+            const input = parseFloat(temperature);
+            if (Number.isNaN(input)) {
+              return '';
+            }
+            const output = convert(input);
+            const rounded = Math.round(output * 1000) / 1000;
+            return rounded.toString();
+          }
+          // 入力された値に応じてテキストを表示
+          function BoilingVerdict(props) {
+            if (props.celsius >= 100) {
+              return <p>結果：水は沸騰する</p>;
+            }
+            return <p>結果：水は沸騰しない</p>;
+          }
+          // 温度（temperature）を入力するための仕組み
+          class TemperatureInput extends React.Component {
+            constructor(props) {
+              super(props);
+              this.handleChange = this.handleChange.bind(this);
+            }
+            // 入力処理
+            handleChange(e) {
+              this.props.onTemperatureChange(e.target.value);
+            }
+            // 入力欄の再描画
+            render() {
+              const temperature = this.props.temperature;
+              const scale = this.props.scale;
+              return (
+                <fieldset>
+                  <legend>{scaleNames[scale]} で温度を入力</legend>
+                  <input value={temperature}
+                        onChange={this.handleChange} />
+                </fieldset>
+              );
+            }
+          }
+          // 本体
+          class Calculator extends React.Component {
+            constructor(props) {
+              super(props);
+              this.handleCelsiusChange = this.handleCelsiusChange.bind(this);
+              this.handleFahrenheitChange = this.handleFahrenheitChange.bind(this);
+              this.state = {temperature: '', scale: 'c'};
+            }
+            // 摂氏（Celsius）の状態を変更
+            handleCelsiusChange(temperature) {
+              this.setState({scale: 'c', temperature});
+            }
+            // 華氏（Fahrenheit）の状態を変更
+            handleFahrenheitChange(temperature) {
+              this.setState({scale: 'f', temperature});
+            }
+            // 再描画
+            render() {
+              const scale = this.state.scale; // 換算尺度　c or f
+              const temperature = this.state.temperature; // 温度
+              const celsius = scale === 'f' ? tryConvert(temperature, toCelsius) : temperature;
+              const fahrenheit = scale === 'c' ? tryConvert(temperature, toFahrenheit) : temperature;
+
+              return (
+                <div>
+                  <TemperatureInput
+                    scale="c"
+                    temperature={celsius}
+                    onTemperatureChange={this.handleCelsiusChange} />
+                  <TemperatureInput
+                    scale="f"
+                    temperature={fahrenheit}
+                    onTemperatureChange={this.handleFahrenheitChange} />
+                  <BoilingVerdict
+                    celsius={parseFloat(celsius)} />
+                </div>
+              );
+            }
+          }
+          ReactDOM.render(
+            <Calculator />,
+            document.getElementById('root')
+          );
+        </script>
+        <!-- Reactコード　ここまで -->
+
+
+        <div class="postPageBack">
+          <p class="postPageBackParagraph">
+            記事『<a href="https://moon-forest-design.github.io/memo/reactjs-lift-up-state/">
+              Reactの stateのリフトアップを学ぶ
+            </a>』のデモページです。
+          </p>
+        </div>
+        <!-- /.postPageBack -->
+
+        <div class="postFooter">
+          <div class="postDate">
+            作成日: <time class="releaseDate" datetime="2021-7-31">2021年7月31日</time>
+          </div>
+          <div class="postAuthor">
+            作成者: イールド
+          </div>
+        </div>
+        <!-- /.postFooter -->
+
+      </section>
+      <!-- /.contents -->
+
+    </div>
+    <!-- /.main__inner -->
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="profile">
+        <div class="backSignboard">
+          <a class="backSignboard__link" href="https://moon-forest-design.github.io/">
+            <img class="backSignboard__logo" src="../img/logoTitle.png" alt="ツキノラボのロゴ" width="318" height="52">
+          </a>
+        </div>
+        <p class="office">
+          <a href="https://moon-forest-design.com/" title="ホームページ制作の「月の森デザイン」" target="_blank" rel="noopener noreferrer">月の森デザイン</a> の Web研究室
+        </p>
+      </div>
+      <div class="copyright">
+        <p><small>Copyright &copy; 2021 <a class="copyrightHolder" href="https://moon-forest-design.com/" title="ホームページ制作の「月の森デザイン」" target="_blank" rel="noopener noreferrer">月の森デザイン</a> All Rights Reserved.</small></p>
+      </div>
+    </div>
+  </footer>
+  <noscript>
+    <p>お使いのWebブラウザは、JavaScriptの設定がOFF（無効）になっているようです。</p>
+    <p>このWebサイトを、より良い形でご利用になるためには、JavaScriptの設定をON（有効）にする必要があります。</p>
+    <p>お手間さまですが、ご検討くださいますよう、よろしくお願い申しあげます。</p>
+  </noscript>
+
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+</body>
+</html>
