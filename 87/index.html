@@ -7,13 +7,13 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="../favicon.ico">
   <link rel="canonical" href="https://moon-forest-design.github.io/demo/87/">
-  <title>デモページ：Reactの stateのリフトアップを学ぶ</title>
+  <title>デモページ：Reactの Stateのリフトアップを学ぶ</title>
   <meta name="format-detection" content="telephone=no">
   <meta name="description" content="React公式の「state のリフトアップ」で紹介されている 水の沸騰温度を計算するアプリのコードを試すデモページです。">
   <meta name="author" content="イールド（月の森デザイン）">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:site_name" content="ツキノラボ">
-  <meta property="og:title" content="デモページ：Reactの stateのリフトアップを学ぶ">
+  <meta property="og:title" content="デモページ：Reactの Stateのリフトアップを学ぶ">
   <meta property="og:description" content="React公式の「state のリフトアップ」で紹介されている 水の沸騰温度を計算するアプリのコードを試すデモページです。">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://moon-forest-design.github.io/demo/87/">
@@ -22,7 +22,7 @@
 <body>
   <header class="header">
     <div class="header__inner">
-      <h1 class="siteTitle">Reactの stateの<br class="brNone">リフトアップのデモ</h1>
+      <h1 class="siteTitle">Reactの Stateの<br class="brNone">リフトアップのデモ</h1>
     </div>
   </header>
 
@@ -64,7 +64,7 @@
             }
             return <p>結果：水は沸騰しない</p>;
           }
-          // 温度（temperature）を入力するための仕組み
+          // 温度（temperature）を入力するための仕組み。摂氏・華氏それぞれの状態が発生する
           class TemperatureInput extends React.Component {
             constructor(props) {
               super(props);
@@ -87,7 +87,7 @@
               );
             }
           }
-          // 本体
+          // 直近の先祖コンポーネント Calculatorで Stateを管理する
           class Calculator extends React.Component {
             constructor(props) {
               super(props);
