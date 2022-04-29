@@ -101,6 +101,15 @@ img, svg {
   font-size: 1.6rem;
   margin-bottom: 100px;
 }
+.heading-2 {
+  font-size: 2rem;
+  margin-bottom: 2em;
+  padding: .5em 1em;
+  text-align: center;
+  color: #fffffc;
+  background-color: #192f60;
+  border-radius: 4px;
+}
 .postPageBack {
   padding: 300px 1em 500px;
   text-align: center;
@@ -123,46 +132,51 @@ img, svg {
 
 /* demo
 ================================================== */
-:root {
-  --main-color: #c97586;
-  --text-heading-color: #fffffc;
-  --text-color: #3f312b;
-  --gray-color: #d3cfd9;
-}
 .demo {
-  width: 100%;
-  padding: 1em;
-  text-align: center;
-  border: 2px solid var(--main-color, black);
+  width: 200px;
+  height: 100px;
+  margin: 0 auto 90px;
   border-radius: 4px;
 }
-.demo__title {
-  margin-bottom: 2em;
-  color: var(--text-heading-color, white);
-  background-color: var(--main-color, black);
-  border-radius: 4px;
+.demo-linear-1 {
+  background: linear-gradient(red, orange);
 }
-.demo__text {
-  margin-bottom: 2em;
-  color: var(--text-color, black);
+.demo-linear-2 {
+  background: linear-gradient(transparent, orange);
 }
-.demo__table {
-  width: 100%;
-  margin-bottom: 2em;
-  border-collapse: collapse;
-  text-align: center;
-  border-top: 1px solid var(--gray-color, black);
-  border-left: 1px solid var(--gray-color, black);
+.demo-linear-3 {
+  background: linear-gradient(red, yellow, orange);
 }
-.demo__table th,
-.demo__table td {
-  padding: .5em 1em;
-  border-right: 1px solid var(--gray-color, black);
-  border-bottom: 1px solid var(--gray-color, black);
+.demo-linear-4 {
+  background: linear-gradient(red 50%, orange);
 }
-.demo__table th {
-  color: var(--text-heading-color, white);
-  background-color: var(--main-color, black);
+.demo-linear-5 {
+  background: linear-gradient(red 50%, orange 50%);
+}
+.demo-linear-6 {
+  background: linear-gradient(45deg, red, orange);
+}
+.demo-linear-7 {
+  background: linear-gradient(90deg, red, orange);
+  /* background: linear-gradient(to right, red, blue); */
+}
+.demo-linear-8 {
+  background: linear-gradient(135deg, red 60%, orange);
+}
+.demo-radial-1 {
+  background: radial-gradient(circle, red, orange);
+}
+.demo-conic-1 {
+  background: conic-gradient(red, orange, yellow, green, blue, purple);
+}
+.demo-repeating-linear-1 {
+  background: repeating-linear-gradient(red, red 10px, orange 10px, orange 20px);
+}
+.demo-repeating-linear-2 {
+  background: repeating-linear-gradient(-45deg, red, red 10px, orange 10px, orange 20px);
+}
+.demo-repeating-radial-1 {
+  background: repeating-radial-gradient(circle, red, red 10px, orange 10px, orange 20px);
 }
 
 
