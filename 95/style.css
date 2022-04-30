@@ -2,7 +2,7 @@
 
 /* base
 ================================================== */
-body, h1, h2, p, ul, li {
+body, h1, h2, p, ul, li, dl, dt, dd, figure {
   margin: 0;
   padding: 0;
 }
@@ -41,6 +41,7 @@ img, svg, iframe {
   padding-top: .7em;
 }
 .siteTitle {
+  letter-spacing: .1em;
   text-align: center;
   color: #192f60;
 }
@@ -71,14 +72,15 @@ img, svg, iframe {
 ================================================== */
 .pleaseScroll {
   display: none;
-  font-size: 2rem;
-  font-weight: bold;
+  width: 80px;
+  height: 20px;
+  margin: 0 auto;
   position: absolute;
   right: 0;
-  bottom: 30px;
+  bottom: -5px;
   left: 0;
-  text-align: center;
-  color: #192f60;
+  border-radius: 50%;
+  background-color: #192f60;
 }
 
 
@@ -86,20 +88,52 @@ img, svg, iframe {
 ================================================== */
 .animationBounce {
   animation-name: bounce;
-  animation-duration: 2s;
+  animation-duration: 1.8s;
   animation-iteration-count: infinite;
 }
 @keyframes bounce {
-  0%, 100%, 20%, 50%, 80% {
-    transform: translateY(0px);
+  0% {
+    bottom: -5px;
   }
-  40% {
-    transform: translateY(-30px);
+  85% {
+    width: 50px;
+    height: 50px;
+    bottom: 250px;
   }
-  60% {
-    transform: translateY(-15px);
+  100% {
+    bottom: -5px;
   }
 }
+
+/* #ball {
+  width: 100px;
+  height: 100px;
+  margin: 50px auto;
+  position: relative;
+  border-radius: 50%;
+  background: linear-gradient(
+    35deg,
+    #ccffff,
+    #ffcccc
+  );
+  animation-name: bounce;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce{
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: 249px;
+    width: 130px;
+    height: 70px;
+  }
+  100% {
+    top: 0px;
+  }
+} */
 
 
 /* main
