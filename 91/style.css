@@ -149,13 +149,18 @@ img, svg {
 .must {
   color: #c9171e;
 }
+.sr-only {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  overflow: hidden;
+}
 .formList__description fieldset {
   border: 0;
   margin: 0;
   padding: 0;
-}
-.formList__description legend {
-  display: none;
 }
 .formList__description input[type = text],
 .formList__description input[type = date],
