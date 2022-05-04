@@ -130,24 +130,30 @@ img, svg {
 }
 
 
-/* sr-only
+/* flexDemo
 ================================================== */
-.demo {
-  text-align: center;
+.flexDemo {
+  width: 100%;
+  margin-bottom: 100px;
+  list-style-type: none;
+  background-color: #302833;
+  border-radius: 4px;
 }
-.demo figure {
-  margin-bottom: 30px;
+.flex--direction--row {
+  display: flex;
+  flex-direction: row;
 }
-.demo img {
-  margin-bottom: 10px;
+.flex--direction--column {
+  display: flex;
+  flex-direction: column;
 }
-.sr-only {
-  width: 1px;
-  height: 1px;
-  position: absolute;
-  left: -10000px;
-  top: auto;
-  overflow: hidden;
+.flex--direction--row--reverse {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.flex--direction--column--reverse {
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 
