@@ -140,7 +140,7 @@ img, svg {
   border-radius: 4px;
 }
 .flexDemo__item {
-  width: 180px;
+  width: 25%;
   height: auto;
 }
 .flex--justify--content--normal {
