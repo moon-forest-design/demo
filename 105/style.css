@@ -118,15 +118,38 @@ img, svg, iframe {
 }
 
 
-/* grid
+/* gridDemo
 ================================================== */
-.grid {
-  margin: 100px 0;
+.gridDemo {
+  text-align: center;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(315px, auto));
-  /* grid-template-columns: repeat(auto-fit, minmax(315px, auto)); */
-  gap: 20px;
-  list-style-type: none;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+  "header header header"
+  "main main side"
+  "footer footer footer";
+  gap: 10px;
+}
+.gridDemo__item {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1em;
+}
+.gridDemo__item--header {
+  grid-area: header;
+  background-color: #f09199;
+}
+.gridDemo__item--main {
+  grid-area: main;
+  background-color: #b0ca71;
+}
+.gridDemo__item--side {
+  grid-area: side;
+  background-color: #eec362;
+}
+.gridDemo__item--footer {
+  grid-area: footer;
+  background-color: #c0a2c7;
 }
 
 
