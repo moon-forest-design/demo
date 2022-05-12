@@ -2,7 +2,7 @@
 
 /* base
 ================================================== */
-body, h1, h2, p, ul, li, figure {
+body, h1, h2, ul, li, figure, blockquote {
   margin: 0;
   padding: 0;
 }
@@ -95,10 +95,6 @@ img, svg {
   font-size: 1.6rem;
   margin-bottom: 100px;
 }
-.contents blockquote p:last-child{
-  padding-top: 1em;
-  text-align: right;
-}
 .postPageBack {
   padding: 300px 1em 500px;
   text-align: center;
@@ -121,14 +117,39 @@ img, svg {
 
 /* Google Fonts
 ================================================== */
-.yuseiMagic {
+.quote {
   font-size: 2rem;
   font-family: 'Yusei Magic', sans-serif;
-  margin: 4em 0 8em;
-  padding: 1em;
-  border: 1px solid #ccc;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1em 1.5em;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: #e6cde3;
 }
-
+.quote__text {
+  margin-bottom: 3em;
+}
+.quote__caption {
+  text-align: right;
+}
+.quote__cite {
+  font-style: normal;
+}
+.quote__cite a {
+  text-decoration: none;
+}
+.quote__cite a,
+.quote__cite a:link {
+  font-weight: bold;
+  color: #192f60;
+}
+.quote__cite a:visited {
+  color: #551A8B;
+}
+.quote__cite a:hover {
+  opacity: .7;
+}
 
 /* footer
 ================================================== */
