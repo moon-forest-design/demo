@@ -139,7 +139,17 @@ img, svg, iframe {
 .hoverAnime__link:hover {
   transform: translateY(10px);
 }
-
+@media screen and (max-width: 576px) { /* スマホ用 */
+  .hoverAnime {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .hoverAnime__item {
+    width: 100%;
+    margin-bottom: 1em;
+    text-align: center;
+  }
+}
 
 
 /* footer
