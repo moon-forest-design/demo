@@ -119,6 +119,7 @@ img, svg, iframe {
   opacity: .7;
 }
 
+
 /* fontawesome
 ================================================== */
 .fontawesome {
@@ -134,6 +135,38 @@ img, svg, iframe {
   font-weight: 900; /* solidなので900を指定 */
   margin-right: .6em;
   color: #241c1c;
+}
+.snsList {
+  font-size: 2.4rem;
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+.snsList__item:not(:last-of-type) {
+  margin-right: 1.5em;
+}
+.snsList__link {
+  box-sizing: border-box;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: .6s;
+}
+.snsList__link::before {
+  font-weight: 900;
+  margin-right: .2em;
+}
+.snsList__link--github::before {
+  font-family: 'Font Awesome 5 Brands';
+  content: '\f09b';
+}
+.snsList__link--facebook::before {
+  font-family: 'Font Awesome 5 Brands';
+  content: '\f082';
+}
+.snsList__link--twitter::before {
+  font-family: 'Font Awesome 5 Brands';
+  content: '\f099';
 }
 
 
